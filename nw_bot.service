@@ -4,7 +4,9 @@ After=multi-user.target
 [Service]
 Type=simple
 Restart=always
-WorkingDirectory=
-ExecStart=/usr/bin/python3
+WorkingDirectory=/path/to/nw-bot/nw-bot
+ExecStart=/usr/bin/python3 -u /path/to/nw-bot/nw_bot.py
+StandardOutput=append:/path/to/nw-bot/run.log
+StandardError=append:/path/to/nw-bot/err.log
 [Install]
 WantedBy=multi-user.target
